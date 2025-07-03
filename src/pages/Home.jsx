@@ -10,7 +10,7 @@ const Home = () => {
         <div className="logo">
           KELVIANOV/2025
         </div>
-        <NavMenu />
+        <NavMenu currentPage="home" />
         <div className="header-right">
           <button className="contact-btn">CONTACT NOW</button>
         </div>
@@ -34,6 +34,10 @@ const Home = () => {
             <div className="nav-point">
               <span className="dot"></span>
               <span className="label">ABOUT ME</span>
+            </div>
+            <div className="nav-point">
+              <span className="dot"></span>
+              <span className="label">CERTIFICATES</span>
             </div>
           </div>
         </div>

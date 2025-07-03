@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
 import './NavMenu.css';
 
-const NavMenu = () => {
+const NavMenu = ({ currentPage = 'home' }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const menuItems = [
+    { name: 'HOME', page: 'home' },
+    { name: 'CERTIFICATES', page: 'certificates' },
+    { name: 'PROJECTS', page: 'projects' },
+    { name: 'ABOUT', page: 'about' },
+    { name: 'CONTACT', page: 'contact' }
+  ];
 
   return (
     <>
@@ -25,7 +33,7 @@ const NavMenu = () => {
         {/* Header */}
         <header className="menu-header">
           <div className="menu-logo">
-            LOCAL/46°28'58.6272"N
+            KELVIANOV/2025
           </div>
           <div className="menu-close" onClick={toggleMenu}>
             ×
@@ -38,21 +46,13 @@ const NavMenu = () => {
         {/* Menu Content */}
         <div className="menu-content">
           <div className="menu-items">
-            <div className="menu-item">
-              <span className="menu-label gray">HOME</span>
-            </div>
-            <div className="menu-item">
-              <span className="menu-label white">WORK</span>
-            </div>
-            <div className="menu-item">
-              <span className="menu-label gray">PHOTOGRAPHY</span>
-            </div>
-            <div className="menu-item">
-              <span className="menu-label white">ARTICLE</span>
-            </div>
-            <div className="menu-item">
-              <span className="menu-label white">CONTACT</span>
-            </div>
+            {menuItems.map((item, index) => (
+              <div key={index} className="menu-item">
+                <span className={`menu-label ${currentPage === item.page ? 'gray' : 'white'}`}>
+                  {item.name}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
 
