@@ -2,7 +2,13 @@
 .home-container {
   min-height: 100vh;
   width: 100vw;
-  background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+  background: #0a0a0a;
+  background-image: 
+    /* Vertical grid lines */
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+    /* Horizontal grid lines */
+    linear-gradient(180deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 20px 20px;
   color: white;
   font-family: 'Arial', sans-serif;
   margin: 0;

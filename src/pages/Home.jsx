@@ -7,7 +7,7 @@ const Home = () => {
       {/* Header Navigation */}
       <header className="header">
         <div className="logo">
-          LOGO/FORMULA
+          LOCAL/194756
         </div>
         <nav className="nav-menu">
           <div className="menu-dots">
@@ -18,7 +18,7 @@ const Home = () => {
           </div>
         </nav>
         <div className="header-right">
-          <button className="contact-btn">CONTACT ME</button>
+          <button className="contact-btn">CONTACT NOW</button>
         </div>
       </header>
 
@@ -35,11 +35,11 @@ const Home = () => {
             </div>
             <div className="nav-point">
               <span className="dot"></span>
-              <span className="label">AVAILABLE ALL PROJECTS</span>
+              <span className="label">MY PROJECTS</span>
             </div>
             <div className="nav-point">
               <span className="dot"></span>
-              <span className="label">ABOUT GREYO</span>
+              <span className="label">ABOUT ME</span>
             </div>
           </div>
         </div>
