@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Home.css';
+import NavMenu from '../components/NavMenu';
 
 const Home = () => {
   return (
@@ -7,16 +8,9 @@ const Home = () => {
       {/* Header Navigation */}
       <header className="header">
         <div className="logo">
-          LOCAL/194756
+          KELVIANOV/2025
         </div>
-        <nav className="nav-menu">
-          <div className="menu-dots">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </nav>
+        <NavMenu />
         <div className="header-right">
           <button className="contact-btn">CONTACT NOW</button>
         </div>
