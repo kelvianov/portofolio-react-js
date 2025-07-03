@@ -1,12 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './NavMenu.css';
 
 const NavMenu = ({ currentPage = 'home' }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    if (isMenuOpen) {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setIsMenuOpen(false);
+        setIsAnimating(false);
+      }, 300);
+    } else {
+      setIsMenuOpen(true);
+    }
   };
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
 
   const menuItems = [
     { name: 'HOME', page: 'home' },
@@ -29,7 +51,7 @@ const NavMenu = ({ currentPage = 'home' }) => {
       </nav>
 
       {/* Fullscreen Navigation Menu */}
-      <div className={`fullscreen-menu ${isMenuOpen ? 'active' : ''}`}>
+      <div className={`fullscreen-menu ${isMenuOpen ? 'active' : ''} ${isAnimating ? 'closing' : ''}`}>
         {/* Header */}
         <header className="menu-header">
           <div className="menu-logo">
