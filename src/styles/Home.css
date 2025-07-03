@@ -175,7 +175,7 @@ html, body {
 
 .nav-point:nth-child(1) { 
   animation-delay: 1s;
-  margin-left: -50px;
+  margin-left: 5px;
 }
 .nav-point:nth-child(2) { animation-delay: 1.2s; }
 .nav-point:nth-child(3) { animation-delay: 1.4s; }
