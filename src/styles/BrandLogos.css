@@ -21,6 +21,7 @@
   margin: 0;
   /* Tambahan agar animasi tetap looping meski wrapper di center */
   width: max-content;
+  position: relative;
 }
 
 
@@ -54,9 +55,19 @@
   justify-content: center;
   box-shadow: 0 2px 16px 0 #0002;
   position: relative;
-  transition: transform 0.2s;
+  transition: transform 0.2s, opacity 0.6s;
   min-width: 300px;
   margin: 0;
+  /* Fade effect for entering/exiting cards */
+  opacity: 1;
+  will-change: opacity;
+}
+
+/* Fade in/out effect for cards at the edges */
+.brand-logos-marquee-wrapper {
+  /* ...existing code... */
+  mask-image: linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%);
 }
 .brand-card:hover {
   transform: translateY(-6px) scale(1.03);
