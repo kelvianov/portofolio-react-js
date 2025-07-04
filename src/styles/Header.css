@@ -1,0 +1,66 @@
+/* Header.css */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  box-sizing: border-box;
+  opacity: 0;
+  animation: slideInFromTop 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
+  margin-bottom: 80px;
+}
+
+.logo {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #666;
+  opacity: 0;
+  animation: slideInFromLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
+}
+
+.contact-btn {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: slideInFromRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
+}
+
+.contact-btn:hover {
+  background: white;
+  color: black;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    padding: 20px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 20px 20px;
+  }
+  
+  .contact-btn {
+    padding: 8px 18px;
+    font-size: 12px;
+  }
+  
+  .logo {
+    font-size: 14px;
+  }
+}

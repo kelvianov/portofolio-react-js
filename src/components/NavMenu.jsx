@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './NavMenu.css';
+import '../styles/NavMenu.css';
 
 const NavMenu = ({ currentPage = 'home' }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
