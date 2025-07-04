@@ -2,26 +2,21 @@ import React from "react";
 import "../styles/BrandLogos.css";
 
 const brands = [
-  {
-    name: "Basel",
-    textClass: "brand-bold"
-  },
-  {
-    name: "theo",
-    textClass: "brand-script"
-  },
-  {
-    name: "oslo.",
-    textClass: "brand-oslo"
-  },
-  {
-    name: "Cairo",
-    textClass: "brand-cairo"
-  },
-  {
-    name: "Manila.",
-    textClass: "brand-bold"
-  }
+  // Phase 1: Discover and Analysis
+  { name: "Figma", textClass: "brand-oslo" },
+  { name: "Photoshop", textClass: "brand-script" },
+  { name: "Git", textClass: "brand-bold" },
+  { name: "VS Code", textClass: "brand-bold" },
+  // Phase 2: Design and Implement
+  { name: "HTML5", textClass: "brand-bold" },
+  { name: "CSS3", textClass: "brand-bold" },
+  { name: "Vite", textClass: "brand-cairo" },
+  { name: "React", textClass: "brand-bold" },
+  // Phase 3: Deliver and Monitor
+  { name: "PHP", textClass: "brand-bold" },
+  { name: "Laravel", textClass: "brand-cairo" },
+  { name: "MySQL", textClass: "brand-bold" },
+  { name: "Node.js", textClass: "brand-script" },
 ];
 
 const BrandLogos = () => (
