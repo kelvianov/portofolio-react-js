@@ -17,7 +17,7 @@ const portfolioData = [
     activeDot: 1,
   },
   {
-   image: "/images/project2.0.png",
+    image: "/images/project2.0.png",
     title: "KosKu",
     subtitle: "Commercial Website",
     dots: 5,
@@ -47,17 +47,25 @@ const PortfolioSection = () => (
           fingers flying across the device.
         </p>
       </div>
+
       {/* Bawah */}
       <div className="portfolio-card-left">
         <div className="portfolio-card">
-          <img src={portfolioData[0].image} alt={portfolioData[0].title} className="portfolio-img" />
+          <img
+            src={portfolioData[0].image}
+            alt={portfolioData[0].title}
+            className="portfolio-img"
+          />
           <div className="portfolio-card-footer">
             <div className="portfolio-dots">
               {[...Array(portfolioData[0].dots)].map((_, i) => (
-                <span key={i} className={i === portfolioData[0].activeDot ? "dot active" : "dot"}></span>
+                <span
+                  key={i}
+                  className={i === portfolioData[0].activeDot ? "dot active" : "dot"}
+                ></span>
               ))}
             </div>
-            <div>
+            <div className="portfolio-card-footer-content">
               <div className="portfolio-card-title">{portfolioData[0].title}</div>
               <div className="portfolio-card-subtitle">{portfolioData[0].subtitle}</div>
             </div>
@@ -65,16 +73,24 @@ const PortfolioSection = () => (
           </div>
         </div>
       </div>
+
       <div className="portfolio-card-center">
         <div className="portfolio-card">
-          <img src={portfolioData[2].image} alt={portfolioData[2].title} className="portfolio-img" />
+          <img
+            src={portfolioData[2].image}
+            alt={portfolioData[2].title}
+            className="portfolio-img"
+          />
           <div className="portfolio-card-footer">
             <div className="portfolio-dots">
               {[...Array(portfolioData[2].dots)].map((_, i) => (
-                <span key={i} className={i === portfolioData[2].activeDot ? "dot active" : "dot"}></span>
+                <span
+                  key={i}
+                  className={i === portfolioData[2].activeDot ? "dot active" : "dot"}
+                ></span>
               ))}
             </div>
-            <div>
+            <div className="portfolio-card-footer-content">
               <div className="portfolio-card-title">{portfolioData[2].title}</div>
               <div className="portfolio-card-subtitle">{portfolioData[2].subtitle}</div>
             </div>
@@ -82,16 +98,24 @@ const PortfolioSection = () => (
           </div>
         </div>
       </div>
+
       <div className="portfolio-card-right">
         <div className="portfolio-card landscape">
-          <img src={portfolioData[1].image} alt={portfolioData[1].title} className="portfolio-img" />
+          <img
+            src={portfolioData[1].image}
+            alt={portfolioData[1].title}
+            className="portfolio-img"
+          />
           <div className="portfolio-card-footer">
             <div className="portfolio-dots">
               {[...Array(portfolioData[1].dots)].map((_, i) => (
-                <span key={i} className={i === portfolioData[1].activeDot ? "dot active" : "dot"}></span>
+                <span
+                  key={i}
+                  className={i === portfolioData[1].activeDot ? "dot active" : "dot"}
+                ></span>
               ))}
             </div>
-            <div>
+            <div className="portfolio-card-footer-content">
               <div className="portfolio-card-title">{portfolioData[1].title}</div>
               <div className="portfolio-card-subtitle">{portfolioData[1].subtitle}</div>
             </div>
