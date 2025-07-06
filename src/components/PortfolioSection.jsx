@@ -38,7 +38,7 @@ const PortfolioSection = () => (
         <h2 className="portfolio-title">
           <span>LATEST</span>
           <br />
-          <span>PORTFOLIO</span>
+          <span>PROJECT</span>
         </h2>
       </div>
       <div className="portfolio-desc-block">
