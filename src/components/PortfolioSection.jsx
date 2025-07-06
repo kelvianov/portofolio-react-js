@@ -25,9 +25,13 @@ const portfolioData = [
   },
 ];
 
+
 const PortfolioSection = () => {
   const titleRef = useRef(null);
   const [titleVisible, setTitleVisible] = useState(false);
+
+  // Custom cursor state
+  const [cursor, setCursor] = useState({ show: false, x: 0, y: 0 });
 
   useEffect(() => {
     const currentTitle = titleRef.current;
@@ -47,8 +51,30 @@ const PortfolioSection = () => {
     };
   }, []);
 
+  // Handler for custom cursor
+  const handleImgEnter = (e) => {
+    setCursor({ show: true, x: e.clientX, y: e.clientY });
+  };
+  const handleImgMove = (e) => {
+    setCursor({ show: true, x: e.clientX, y: e.clientY });
+  };
+  const handleImgLeave = () => {
+    setCursor({ show: false, x: 0, y: 0 });
+  };
+
   return (
     <section className="portfolio-section">
+      {/* Custom Cursor */}
+      <div
+        className={"portfolio-img-cursor" + (cursor.show ? " active" : "")}
+        style={{
+          left: cursor.x,
+          top: cursor.y,
+          transform: "translate(-50%, -50%)",
+        }}
+      >
+        VIEW
+      </div>
       <div className="portfolio-grid">
         {/* Atas */}
         <div className="portfolio-header">
@@ -83,6 +109,9 @@ const PortfolioSection = () => {
             src={portfolioData[0].image}
             alt={portfolioData[0].title}
             className="portfolio-img"
+            onMouseEnter={handleImgEnter}
+            onMouseMove={handleImgMove}
+            onMouseLeave={handleImgLeave}
           />
           <div className="portfolio-card-footer">
             <div className="portfolio-dots">
@@ -108,6 +137,9 @@ const PortfolioSection = () => {
             src={portfolioData[2].image}
             alt={portfolioData[2].title}
             className="portfolio-img"
+            onMouseEnter={handleImgEnter}
+            onMouseMove={handleImgMove}
+            onMouseLeave={handleImgLeave}
           />
           <div className="portfolio-card-footer">
             <div className="portfolio-dots">
@@ -133,6 +165,9 @@ const PortfolioSection = () => {
             src={portfolioData[1].image}
             alt={portfolioData[1].title}
             className="portfolio-img"
+            onMouseEnter={handleImgEnter}
+            onMouseMove={handleImgMove}
+            onMouseLeave={handleImgLeave}
           />
           <div className="portfolio-card-footer">
             <div className="portfolio-dots">

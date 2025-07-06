@@ -201,9 +201,36 @@
   filter: brightness(0.92) contrast(1.05);
   transition: filter 0.3s;
   border-radius: 12px;
+  position: relative;
 }
 .portfolio-card:hover .portfolio-img {
   filter: brightness(1) contrast(1.1) saturate(1.1);
+  cursor: none !important;
+}
+
+/* Custom cursor for portfolio image */
+.portfolio-img-cursor {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  background: #fff;
+  color: #111;
+  font-weight: 900;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.1rem;
+  padding: 0.08em 0.9em;
+  border-radius: 999px;
+  box-shadow: 0 2px 12px #0002;
+  letter-spacing: 0.04em;
+  transition: opacity 0.18s, transform 0.18s;
+  opacity: 0;
+  user-select: none;
+}
+.portfolio-img-cursor.active {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
 }
 
 /* Footer content di bawah image */
