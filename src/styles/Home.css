@@ -24,7 +24,7 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  animation: fadeInScale 1s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Hapus animasi di background/grid, biarkan hanya komponen yang animasi */
   position: relative;
   top: 0;
 }
