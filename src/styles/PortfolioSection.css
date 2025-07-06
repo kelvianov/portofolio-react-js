@@ -1,0 +1,262 @@
+/* Card Center */
+/* Card Center */
+.portfolio-card-center {
+  grid-row: 3;
+  grid-column: 1 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 320px; /* lebih bawah lagi */
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  top: 92%; /* lebih bawah lagi */
+  transform: translate(-50%, -50%);
+  width: 100%;
+  pointer-events: none;
+}
+.portfolio-card-center .portfolio-card {
+  width: 600px;
+  height: 400px;
+  pointer-events: auto;
+}
+/* Background and grid lines, match other sections */
+.portfolio-section {
+  background: #0a0a0a;
+  background-image:
+    linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 120px 120px;
+  padding: 0 0 80px 0;
+  position: relative;
+;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 120px 1fr 1fr;
+  gap: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Header */
+.portfolio-header {
+  grid-column: 1 / 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 13px;
+  color: #b6b6b6;
+  padding: 32px 0 0 0;
+  letter-spacing: 1px;
+}
+.portfolio-section-number {
+  color: #b6e0f7;
+  font-weight: 600;
+}
+.portfolio-section-title {
+  margin: 0 auto;
+  color: #b6b6b6;
+  font-weight: 500;
+}
+.portfolio-section-year {
+  color: #b6b6b6;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* Title */
+.portfolio-title-block {
+  grid-row: 2;
+  grid-column: 1 / 2;
+  align-self: start;
+  margin-top: 0;
+  justify-self: start;
+  text-align: left;
+  margin-left: -90px;
+}
+.portfolio-title {
+  font-size: clamp(48px, 8vw, 110px);
+  font-family: 'Arial Black', 'Montserrat', Arial, sans-serif;
+  font-weight: 900;
+  color: #fff;
+  line-height: 0.95;
+  margin: 0 0 0 0;
+  letter-spacing: -2px;
+}
+
+/* Description */
+.portfolio-desc-block {
+  grid-row: 2;
+  grid-column: 2 / 3;
+  align-self: start;
+  justify-self: end;
+  margin-top: 18px;
+  margin-right: -90px;
+  text-align: right;
+}
+.portfolio-desc {
+  color:white;
+  font-size: 18px;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 400;
+  text-align: right;
+  max-width: 340px;
+  margin: 0;
+}
+
+/* Cards */
+.portfolio-card-left {
+  grid-row: 3;
+  grid-column: 1 / 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 30px;
+  margin-left: -90px;
+}
+.portfolio-card-right {
+  grid-row: 3;
+  grid-column: 2 / 3;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin-top: 148px;
+  margin-right: -90px;
+}
+
+.portfolio-card {
+  background: #181818;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px 0 #0002;
+  width: 520px;
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-card.landscape {
+  width: 420px;
+  height: 220px;
+}
+.portfolio-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  filter: brightness(0.92) contrast(1.05);
+  transition: filter 0.3s;
+}
+.portfolio-card:hover .portfolio-img {
+  filter: brightness(1) contrast(1.1) saturate(1.1);
+}
+
+.portfolio-card-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 28px 24px 28px;
+  background: linear-gradient(0deg, rgba(10,10,10,0.92) 80%, rgba(10,10,10,0.0) 100%);
+  min-height: 80px;
+  box-sizing: border-box;
+}
+
+.portfolio-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 18px;
+}
+.portfolio-dots .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #fff2;
+  display: inline-block;
+  transition: background 0.2s;
+}
+.portfolio-dots .dot.active {
+  background: #fff;
+}
+
+.portfolio-card-title {
+  color: #fff;
+  font-size: 20px;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.portfolio-card-subtitle {
+  color: #b6b6b6;
+  font-size: 13px;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.portfolio-arrow {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  margin-left: 18px;
+  margin-bottom: 2px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.portfolio-arrow:hover {
+  color: #b6e0f7;
+}
+
+@media (max-width: 1100px) {
+  .portfolio-grid {
+    max-width: 100vw;
+    padding: 0 10px;
+  }
+  .portfolio-card {
+    width: 100%;
+    min-width: 0;
+    max-width: 98vw;
+  }
+  .portfolio-card.landscape {
+    width: 100%;
+    min-width: 0;
+    max-width: 98vw;
+  }
+  .portfolio-card-center .portfolio-card {
+    width: 90vw;
+    height: 260px;
+  }
+}
+
+@media (max-width: 900px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 120px 1fr 1fr 1fr;
+  }
+  .portfolio-title-block, .portfolio-desc-block {
+    grid-column: 1 / 2;
+  }
+  .portfolio-desc-block {
+    justify-self: start;
+    text-align: left;
+    margin-top: 10px;
+  }
+  .portfolio-card-left, .portfolio-card-right {
+    grid-column: 1 / 2;
+    justify-content: center;
+    margin-top: 20px;
+  }
+}
