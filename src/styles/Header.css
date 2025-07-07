@@ -10,7 +10,7 @@
   box-sizing: border-box;
   opacity: 0;
   animation: slideInFromTop 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .logo {
@@ -34,6 +34,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   animation: slideInFromRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
+  margin-top: 10px;
 }
 
 .contact-btn:hover {
