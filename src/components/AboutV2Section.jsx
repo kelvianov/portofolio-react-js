@@ -45,7 +45,7 @@ const AboutV2Section = () => {
           <h1 
             className="aboutv2-section-title-main"
             style={{
-              transform: `translateY(${scrollProgress * -120}px) scale(${1 - scrollProgress * 0.5})`,
+              transform: `translateY(${scrollProgress > 0.35 ? (scrollProgress - 0.35) / 0.65 * -120 : 0}px) scale(${scrollProgress > 0.35 ? 1 - ((scrollProgress - 0.35) / 0.65) * 0.5 : 1})`,
               zIndex: 1,
               position: 'relative',
               transition: 'transform 0.7s cubic-bezier(.4,1.5,.6,1)',
@@ -66,7 +66,7 @@ const AboutV2Section = () => {
               marginRight: 'auto',
               top: '0',
               height: '100vh',
-              transform: `translateY(${400 - (scrollProgress * 400)}px)`,
+              transform: `translateY(${scrollProgress > 0.35 ? 400 - ((scrollProgress - 0.35) / 0.65) * 400 : 400}px)`,
               opacity: scrollProgress > 0.05 ? 1 : 0,
               transition: 'transform 0.7s cubic-bezier(.4,1.5,.6,1), opacity 0.7s cubic-bezier(.4,1.5,.6,1)',
               display: 'flex',
