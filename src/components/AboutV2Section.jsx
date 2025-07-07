@@ -91,14 +91,14 @@ const AboutV2Section = () => {
           </div>
           {/* Tampilkan deskripsi di bawah gambar jika scroll sudah selesai (progress 1) */}
           {scrollProgress === 1 && (
-            <div className="aboutv2-desc-wrapper">
-              <div className="aboutv2-desc-title">
-                I&apos;M AN INNOVATIVE DESIGNER AND DIGITAL ARTIST IN USA.<br/>
-                MY PASSION FOR MINIMALIST AESTHETICS, ELEGANT TYPOGRAPHY, AND INTUITIVE DESIGN SHINES THROUGH IN MY WORK.
-              </div>
-              <div className="aboutv2-desc-text">
-                I&apos;m on the cutting edge of no-code tools that allow me to bring my creative visions to life. Though my methods may be unconventional, my dedication to the craft is unparalleled. I thrive on finding &quot;unexpected solutions&quot; and believe that with the right perspective, design can elevate the human experience.
-              </div>
+         <div className="aboutv2-desc-wrapper">               
+                <div className="aboutv2-desc-title">                 
+                    I&apos;M A CREATIVE SOFTWARE ENGINEER FROM INDONESIA.<br/>                 
+                    PASSIONATE ABOUT ELEGANT INTERFACES, MODERN CODE, AND USER-CENTERED DESIGN.               
+                </div>               
+                <div className="aboutv2-desc-text">                 
+                    I build scalable web applications with modern technologies like React and Next.js. My approach combines technical precision with creative problem-solving, turning complex ideas into clean, maintainable code that delivers exceptional user experiences.               
+                </div>
               {/* Tombol Download Resume */}
                 <a
                 href="/assets/CV.pdf"
