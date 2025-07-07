@@ -51,7 +51,7 @@
   flex: 1;
   min-height: 70vh;
   text-align: center;
-  margin-top: -150px;
+  margin-top: 0px;
 }
 
 .aboutv2-section-title-main {
@@ -78,4 +78,36 @@
   vertical-align: super;
   margin-left: 0.1em;
   font-weight: 400;
+}
+
+.aboutv2-image-container {
+  margin-top: 60px; /* Jarak dari tulisan */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.aboutv2-image {
+  max-width: 500px; /* Sesuaikan ukuran sesuai kebutuhan */
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Optional: shadow effect */
+  transition: transform 0.3s ease; /* Optional: hover effect */
+}
+
+.aboutv2-image:hover {
+  transform: scale(1.02); /* Optional: slight zoom on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .aboutv2-image {
+    max-width: 90%;
+  }
+  
+  .aboutv2-image-container {
+    margin-top: 40px;
+  }
 }

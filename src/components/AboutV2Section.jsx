@@ -13,6 +13,13 @@ const AboutV2Section = () => {
         <h1 className="aboutv2-section-title-main">
           MORE ABOUT<br/>KELVIANOV<span className="aboutv2-section-copyright">©</span>
         </h1>
+        <div className="aboutv2-image-container">
+          <img 
+            src="/images/aboutV2.png" 
+            alt="About Kelvianov" 
+            className="aboutv2-image"
+          />
+        </div>
       </div>
     </section>
   );
