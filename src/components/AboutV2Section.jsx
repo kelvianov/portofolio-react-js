@@ -45,10 +45,11 @@ const AboutV2Section = () => {
           <h1 
             className="aboutv2-section-title-main"
             style={{
-              transform: `translateY(${scrollProgress * -120}px)`,
+              transform: `translateY(${scrollProgress * -120}px) scale(${1 - scrollProgress * 0.5})`,
               zIndex: 1,
               position: 'relative',
-              transition: 'transform 0.3s'
+              transition: 'transform 0.7s cubic-bezier(.4,1.5,.6,1)',
+              willChange: 'transform'
             }}
           >
             MORE ABOUT<br/>KELVIANOV<span className="aboutv2-section-copyright">©</span>
@@ -67,7 +68,7 @@ const AboutV2Section = () => {
               height: '100vh',
               transform: `translateY(${400 - (scrollProgress * 400)}px)`,
               opacity: scrollProgress > 0.05 ? 1 : 0,
-              transition: 'transform 0.3s, opacity 0.3s',
+              transition: 'transform 0.7s cubic-bezier(.4,1.5,.6,1), opacity 0.7s cubic-bezier(.4,1.5,.6,1)',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'flex-start',
