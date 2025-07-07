@@ -1,4 +1,3 @@
-
 .aboutv2-section {
   background: #0a0a0a;
   background-image:
@@ -7,11 +6,11 @@
   background-size: 120px 120px;
   padding: 80px 0;
   position: relative;
-  /* Pastikan tinggi section terdefinisi dengan baik */
   min-height: 100vh;
-  overflow: hidden; /* Prevent content overflow issues */
-  margin-top: -30px; /* Adjusted margin for better spacing */
+  overflow: hidden;
+  margin-top: -30px;
 }
+
 .aboutv2-section-header {
   grid-column: 1 / 3;
   display: flex;
@@ -24,21 +23,25 @@
   letter-spacing: 1px;
   margin-bottom: 40px;
 }
+
 .aboutv2-section-number {
   color: #fff;
   font-weight: 600;
-  margin-left:55px;
+  margin-left: 55px;
 }
+
 .aboutv2-section-titlebar {
   margin-left: 55px;
   font-weight: 500;
 }
+
 .aboutv2-section-since {
   color: #b6b6b6;
   font-size: 12px;
   font-weight: 400;
   margin-right: 65px;
 }
+
 .aboutv2-section-content {
   width: 100%;
   display: flex;
@@ -48,26 +51,31 @@
   flex: 1;
   min-height: 70vh;
   text-align: center;
-  margin-top: -100px; /* Adjusted margin for better spacing */
+  margin-top: -100px;
 }
+
 .aboutv2-section-title-main {
-  font-size: 6vw;
+  font-family: 'Montserrat', 'Arial Black', Arial, sans-serif;
+  font-size: 8vw; /* Increased from 6vw */
   font-weight: 900;
   text-align: center;
-  letter-spacing: 0.01em;
-  line-height: 1.05;
+  letter-spacing: -0.03em; /* Tighter letter spacing */
+  line-height: 0.85; /* Tighter line height */
   margin: 0 auto;
   margin-top: 7vh;
   text-transform: uppercase;
   display: inline-block;
+  color: #ffffff;
+  text-shadow: 0 0 1px rgba(255,255,255,0.1); /* Subtle glow for crispness */
 }
+
 .aboutv2-section-title-main br {
   display: block;
 }
+
 .aboutv2-section-copyright {
-  font-size: 0.8em;
+  font-size: 0.4em; /* Smaller copyright symbol */
   vertical-align: super;
   margin-left: 0.1em;
-}
-.aboutv2-section-desc {
+  font-weight: 400;
 }
