@@ -1,92 +1,71 @@
-.portfolio-card-right .portfolio-card.landscape {
-  width: 520px;
-  height: auto;
-}
-
-/* Card Center */
-.portfolio-card-center {
-  grid-row: 3;
-  grid-column: 1 / 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 370px;
-  z-index: 2;
-  position: absolute;
-  left: 50%;
-  top: 92%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  pointer-events: none;
-}
-.portfolio-card-center .portfolio-card {
-  width: 700px;
-  height: auto;
-  pointer-events: auto;
-}
-
-/* Background and grid lines */
+/* Fixed Portfolio Section CSS */
 .portfolio-section {
   background: #0a0a0a;
   background-image:
     linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px),
     linear-gradient(180deg, rgba(255,255,255,0.06) 1px, transparent 1px);
   background-size: 120px 120px;
-  padding: 0 0 80px 0;
+  padding: 80px 0;
   position: relative;
+  /* Pastikan tinggi section terdefinisi dengan baik */
+  min-height: 100vh;
+  overflow: hidden; /* Prevent content overflow issues */
 }
 
 .portfolio-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 120px 1fr 1fr;
-  gap: 0;
+  grid-template-rows: auto auto 1fr;
+  gap: 40px 0;
   max-width: 1200px;
   margin: 0 auto;
-  min-height: 100vh;
+  padding: 0 40px;
   position: relative;
+  /* Hapus min-height yang bisa konflik */
 }
 
-/* Header */
+/* Header - Lebih sederhana */
 .portfolio-header {
   grid-column: 1 / 3;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   font-family: 'Montserrat', Arial, sans-serif;
   font-size: 13px;
   color: #b6b6b6;
-  padding: 32px 0 0 0;
+  padding: 32px 0;
   letter-spacing: 1px;
+  margin-bottom: 40px;
 }
+
 .portfolio-section-number {
   color: #fff;
   font-weight: 600;
-  margin-left: -80px;
+  margin-left: -145px;
 }
+
 .portfolio-section-title {
-  margin: 0 auto;
   color: #b6b6b6;
   font-weight: 500;
-  margin-left: 20px;
+  margin-left: -1200px;
 }
+
 .portfolio-section-year {
   color: #b6b6b6;
   font-size: 12px;
   font-weight: 400;
-  margin-right: -90px;
+  margin-right: -145px;
 }
 
-/* Title */
+/* Title dan Description - Gunakan flexbox biasa */
 .portfolio-title-block {
-  grid-row: 2;
   grid-column: 1 / 2;
-  align-self: start;
-  margin-top: 0;
-  justify-self: start;
-  text-align: left;
-  margin-left: -90px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-left: -150px; /* Geser ke kiri */
 }
+
 .portfolio-title {
   font-size: clamp(48px, 8vw, 110px);
   font-family: 'Arial Black', 'Montserrat', Arial, sans-serif;
@@ -96,9 +75,6 @@
   margin: 0;
   letter-spacing: -2px;
   text-transform: uppercase;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .portfolio-title .title-line {
@@ -107,6 +83,7 @@
   flex-wrap: nowrap;
   width: 100%;
 }
+
 .portfolio-title .word {
   display: inline-block;
   margin-right: 24px;
@@ -114,86 +91,92 @@
   transform: translateY(50px);
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .portfolio-title.animate .title-line .word:nth-child(1) {
   opacity: 1;
   transform: translateY(0);
   transition-delay: 0.1s;
 }
+
 .portfolio-title.animate .title-line .word:nth-child(2) {
   opacity: 1;
   transform: translateY(0);
   transition-delay: 0.3s;
 }
-.portfolio-title.animate .title-line .word:nth-child(3) {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.5s;
-}
-.portfolio-title.animate .title-line .word:nth-child(4) {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.7s;
+
+.portfolio-desc-block {
+  grid-column: 2 / 3;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  text-align: right;
+  margin-right: -145px; /* Geser ke kanan */
 }
 
-/* Description */
-.portfolio-desc-block {
-  grid-row: 2;
-  grid-column: 2 / 3;
-  align-self: start;
-  justify-self: end;
-  margin-top: 18px;
-  margin-right: -90px;
-  text-align: right;
-}
 .portfolio-desc {
   color: white;
   font-size: 18px;
   font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 400;
-  text-align: right;
   max-width: 340px;
   margin: 0;
+  line-height: 1.6;
 }
 
-/* Cards */
+/* Cards Container - Gunakan CSS Grid yang lebih clean */
+.portfolio-cards-container {
+  grid-column: 1 / 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 40px;
+  margin-top: 60px;
+  position: relative;
+}
+
+/* Card Positioning - Lebih sederhana dan predictable */
 .portfolio-card-left {
-  grid-row: 3;
   grid-column: 1 / 2;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  margin-top: -70px;
-  margin-left: -90px;
-}
-.portfolio-card-left .portfolio-card {
-  width: 700px;
-  height: auto;
-}
-.portfolio-card-right {
-  grid-row: 3;
-  grid-column: 2 / 3;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  margin-top: 20px;
-  margin-right: -90px;
+  grid-row: 1 / 2;
+  justify-self: start;
+  align-self: start;
+  margin-left: -150px; /* Geser ke kiri */
 }
 
-/* Card Style */
+.portfolio-card-right {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  justify-self: end;
+  align-self: start;
+  margin-right: -150px; /* Geser ke kanan */
+  margin-top: 95px; /* Tambahkan margin atas untuk efek overlap */
+}
+
+.portfolio-card-center {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  justify-self: center;
+  align-self: start;
+  margin-top: 40px;
+}
+
+/* Card Styles */
 .portfolio-card {
   background: transparent;
   border-radius: 0;
   box-shadow: none;
-  width: 520px;
+  width: 750px;
   height: auto;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
+
 .portfolio-card.landscape {
-  width: 420px;
+  width: 550px;
   height: auto;
 }
+
 .portfolio-img {
   width: 100%;
   height: auto;
@@ -203,12 +186,13 @@
   border-radius: 12px;
   position: relative;
 }
+
 .portfolio-card:hover .portfolio-img {
   filter: brightness(1) contrast(1.1) saturate(1.1);
   cursor: none !important;
 }
 
-/* Custom cursor for portfolio image */
+/* Custom cursor */
 .portfolio-img-cursor {
   display: none;
   position: fixed;
@@ -227,17 +211,19 @@
   opacity: 0;
   user-select: none;
 }
+
 .portfolio-img-cursor.dark {
   background: #111 !important;
   color: #fff !important;
 }
+
 .portfolio-img-cursor.active {
   display: block;
   opacity: 1;
   transform: scale(1);
 }
 
-/* Footer content di bawah image */
+/* Footer content */
 .portfolio-card-footer {
   background: transparent;
   margin-top: 5px;
@@ -265,6 +251,7 @@
   cursor: pointer;
   transition: color 0.2s;
 }
+
 .portfolio-card-footer .portfolio-arrow:hover {
   color: #b6e0f7;
 }
@@ -278,6 +265,7 @@
   position: relative;
   top: -10px;
 }
+
 .portfolio-dots .dot {
   width: 9px;
   height: 9px;
@@ -285,6 +273,7 @@
   background: #fff2;
   transition: background 0.2s;
 }
+
 .portfolio-dots .dot.active {
   background: #fff;
 }
@@ -296,6 +285,7 @@
   font-weight: 600;
   margin: 0 0 2px 0;
 }
+
 .portfolio-card-subtitle {
   color: #b6b6b6;
   font-size: 11px;
@@ -309,37 +299,76 @@
 @media (max-width: 1100px) {
   .portfolio-grid {
     max-width: 100vw;
-    padding: 0 10px;
+    padding: 0 20px;
   }
-  .portfolio-card {
-    width: 100%;
-    max-width: 98vw;
-  }
+  
+  .portfolio-card,
   .portfolio-card.landscape {
     width: 100%;
-    max-width: 98vw;
+    max-width: 45vw;
   }
+  
   .portfolio-card-center .portfolio-card {
     width: 90vw;
-    height: auto;
+    max-width: 600px;
   }
 }
+
 @media (max-width: 900px) {
   .portfolio-grid {
     grid-template-columns: 1fr;
-    grid-template-rows: 120px 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
   }
-  .portfolio-title-block, .portfolio-desc-block {
-    grid-column: 1 / 2;
+  
+  .portfolio-header {
+    grid-column: 1;
+    justify-content: space-between;
+    padding: 20px 0;
   }
+  
+  .portfolio-title-block,
+  .portfolio-desc-block {
+    grid-column: 1;
+    margin-left: 0; /* Reset margin untuk mobile */
+  }
+  
   .portfolio-desc-block {
     justify-self: start;
     text-align: left;
-    margin-top: 10px;
-  }
-  .portfolio-card-left, .portfolio-card-right {
-    grid-column: 1 / 2;
-    justify-content: center;
     margin-top: 20px;
+    margin-right: 0; /* Reset margin untuk mobile */
+  }
+  
+  .portfolio-cards-container {
+    grid-column: 1;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 30px;
+  }
+  
+  .portfolio-card-left,
+  .portfolio-card-right,
+  .portfolio-card-center {
+    grid-column: 1;
+    justify-self: center;
+  }
+  
+  .portfolio-card-left {
+    grid-row: 1;
+  }
+  
+  .portfolio-card-right {
+    grid-row: 2;
+  }
+  
+  .portfolio-card-center {
+    grid-row: 3;
+    margin-top: 0;
+  }
+  
+  .portfolio-card,
+  .portfolio-card.landscape {
+    width: 100%;
+    max-width: 90vw;
   }
 }
