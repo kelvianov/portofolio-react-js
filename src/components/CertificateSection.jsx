@@ -4,9 +4,9 @@ import '../styles/CertificateSection.css';
 const CertificateSection = () => (
   <section className="certificate-section">
     <div className="certificate-header">
-      <span className="certificate-section-number">02</span>
+      <span className="certificate-section-number">04</span>
       <span className="certificate-section-title">//CERTIFICATES</span>
-      <span className="certificate-section-year">2019 - 2025</span>
+      <span className="certificate-section-year">2022 - 2025</span>
     </div>
     <div className="certificate-content">
       <div className="certificate-title">
