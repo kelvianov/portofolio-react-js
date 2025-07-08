@@ -1,0 +1,59 @@
+/* Contact Section Styles */
+.contact-section {
+  width: 100vw;
+  min-height: 60vh;
+  background: #0a0a0a;
+  background-image:
+    linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 120px 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-center {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-title {
+  color: #fff;
+  font-family: 'Montserrat', 'Arial Black', Arial, sans-serif;
+  font-size: 7vw;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.01em;
+  line-height: 0.9;
+  margin: 0 0 48px 0;
+  padding: 0;
+}
+
+.contact-section-btn {
+  display: inline-block;
+  background: #fff;
+  color: #111;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  border: none;
+  border-radius: 32px;
+  padding: 16px 44px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+  margin-top: 0;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+.contact-section-btn:hover {
+  background: #222;
+  color: #fff;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+}
