@@ -2,6 +2,10 @@ import React from 'react';
 import '../styles/ContactSection.css';
 
 const ContactSection = () => {
+  const handleBackToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <section className="contact-section">
       <div className="contact-center">
@@ -27,7 +31,9 @@ const ContactSection = () => {
           <span>LINKEDIN ↗</span>
         </div>
         <div className="contact-section-backtotop-row">
-          <span className="contact-section-backtotop">BACK TO TOP</span>
+          <span className="contact-section-backtotop" onClick={handleBackToTop} style={{ cursor: 'pointer' }}>
+            BACK TO TOP
+          </span>
         </div>
         <div className="contact-section-copyright">
           <span>©2024 KELVIANOV DESIGN</span>
