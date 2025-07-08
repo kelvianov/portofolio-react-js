@@ -12,36 +12,73 @@ const certificates = [
       'DEVELOPMENT & TESTING',
       'LAUNCH & OPTIMIZATION'
     ],
-    image: '/images/certificate1.png',
+    image: '/images/certificate1.jpg',
     dots: 1
   },
   {
     title: 'Motion Design',
     subtitle: 'INTERACTION DESIGN, USABILITY AUDITS',
-    details: [],
-    image: '/images/certificate2.png',
+     details: [
+      'PRICING STARTS AT $3,999',
+      'KICKOFF & PLANNING',
+      'DESIGN & PROTOTYPING',
+      'DEVELOPMENT & TESTING',
+      'LAUNCH & OPTIMIZATION'
+    ],
+    image: '/images/certificate2.jpg',
     dots: 2
   },
   {
     title: 'Full Design Package',
     subtitle: 'LOGO CREATION, TYPOGRAPHY, MATERIALS',
-    details: [],
-    image: '/images/certificate3.png',
+    details: [
+      'PRICING STARTS AT $3,999',
+      'KICKOFF & PLANNING',
+      'DESIGN & PROTOTYPING',
+      'DEVELOPMENT & TESTING',
+      'LAUNCH & OPTIMIZATION'
+    ],
+    image: '/images/certificate3.jpg',
     dots: 3
   },
   {
     title: 'React Development',
     subtitle: 'FULL WEBSITE DEVELOPMENT',
-    details: [],
-    image: '/images/certificate4.png',
+    details: [
+      'PRICING STARTS AT $3,999',
+      'KICKOFF & PLANNING',
+      'DESIGN & PROTOTYPING',
+      'DEVELOPMENT & TESTING',
+      'LAUNCH & OPTIMIZATION'
+    ],
+    image: '/images/certificate4.jpg',
     dots: 4
   },
   {
     title: 'Web Design',
     subtitle: 'FIGMA FILE, SKETCH FILE',
-    details: [],
-    image: '/images/certificate5.png',
+    details: [
+      'PRICING STARTS AT $3,999',
+      'KICKOFF & PLANNING',
+      'DESIGN & PROTOTYPING',
+      'DEVELOPMENT & TESTING',
+      'LAUNCH & OPTIMIZATION'
+    ],
+    image: '/images/certificate5.jpg',
     dots: 5
+  },
+    {
+    title: 'Web Design',
+    subtitle: 'FIGMA FILE, SKETCH FILE',
+    details: [
+      'PRICING STARTS AT $3,999',
+      'KICKOFF & PLANNING',
+      'DESIGN & PROTOTYPING',
+      'DEVELOPMENT & TESTING',
+      'LAUNCH & OPTIMIZATION'
+    ],
+    image: '/images/certificate6.jpg',
+    dots: 6
   },
 ];
 
