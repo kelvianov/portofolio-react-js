@@ -26,9 +26,30 @@ const ContactSection = () => {
           <span className="contact-section-extra-right">WEB DEVELOPER<br /><span className="contact-section-extra-sub">+ FULL STACK DEVELOPER</span></span>
         </div>
         <div className="contact-section-social-row">
-          <span>INSTAGRAM ↗</span>
-          <span>GITHUB ↗</span>
-          <span>LINKEDIN ↗</span>
+          <a
+            href="https://www.instagram.com/kelvianov/?next=%2F"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: 'none', color: 'inherit' }}
+          >
+            <span>INSTAGRAM ↗</span>
+          </a>
+          <a
+            href="https://github.com/kelvianov"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: 'none', color: 'inherit' }}
+          >
+            <span>GITHUB ↗</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/kelvianov/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: 'none', color: 'inherit' }}
+          >
+            <span>LINKEDIN ↗</span>
+          </a>
         </div>
         <div className="contact-section-backtotop-row">
           <span className="contact-section-backtotop" onClick={handleBackToTop} style={{ cursor: 'pointer' }}>
