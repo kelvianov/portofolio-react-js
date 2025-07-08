@@ -23,8 +23,8 @@ const ContactSection = () => {
         </div>
         <div className="contact-section-social-row">
           <span>INSTAGRAM ↗</span>
-          <span>DRIBBBLE ↗</span>
-          <span>TWITTER ↗</span>
+          <span>GITHUB ↗</span>
+          <span>LINKEDIN ↗</span>
         </div>
       </div>
     </section>
