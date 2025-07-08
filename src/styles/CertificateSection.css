@@ -24,20 +24,21 @@
 .certificate-section-number {   
   color: #fff;   
   font-weight: 600;   
-  margin-left: 55px; 
+  margin-left: 55px;
+  font-size: 0.82em;
 } 
 
 .certificate-section-title {   
   font-weight: 500;   
   margin-left: 70px;
-  font-size: 0.95em;
+  font-size: 0.78em;
   letter-spacing: 0.15em;
   opacity: 0.8;
-}
+} 
 
 .certificate-section-year {   
   color: #b6b6b6;   
-  font-size: 13px;   
+  font-size: 0.82em;   
   font-weight: 400;   
   margin-right: 65px; 
 } 
