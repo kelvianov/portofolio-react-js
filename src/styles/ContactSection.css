@@ -2,7 +2,7 @@
   flex: 2;
   color: #fff;
   font-family: 'Montserrat', 'Arial Black', Arial, sans-serif;
-  font-size: 1.65vw;
+  font-size: 1.4vw;
   font-weight: 900;
   text-transform: uppercase;
   text-align: center;
@@ -12,6 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 100px;
 }
 
 .contact-section-social-row {
