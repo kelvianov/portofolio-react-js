@@ -1,4 +1,59 @@
 /* Contact Section Styles */
+.contact-section-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  padding: 0 24px 0 40px;
+  box-sizing: border-box;
+}
+
+.contact-section-number {
+  color: #fff;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  opacity: 0.7;
+  letter-spacing: 0.12em;
+  flex: 1;
+  text-align: left;
+}
+.contact-section-titlebar {
+  color: #fff;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  opacity: 0.7;
+  letter-spacing: 0.12em;
+  flex: 1;
+  text-align: center;
+}
+.contact-section-since {
+  color: #fff;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  opacity: 0.7;
+  letter-spacing: 0.12em;
+  flex: 1;
+  text-align: right;
+  padding-right: 32px;
+}
+
+.contact-section-title {
+  color: #b6b6b6;
+  font-weight: 500;
+
+}
+
+.contact-section-year {
+  color: #b6b6b6;
+  font-size: 12px;
+  font-weight: 400;
+
+}
 .contact-section {
   width: 100vw;
   min-height: 60vh;
