@@ -14,6 +14,10 @@ const ContactSection = () => {
           LET'S WORK<br />TOGETHER
         </h2>
         <a href="#contact" className="contact-section-btn">CONTACT NOW</a>
+        <div className="contact-section-extra-row">
+          <span className="contact-section-extra-left">BASED IN INDONESIA,<br /><span className="contact-section-extra-sub">BANDUNG</span></span>
+          <span className="contact-section-extra-right">WEB DEVELOPER<br /><span className="contact-section-extra-sub">+ FULL STACK DEVELOPER</span></span>
+        </div>
       </div>
     </section>
   );
