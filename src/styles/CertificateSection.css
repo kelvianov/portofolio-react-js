@@ -1,13 +1,16 @@
-.certificate-section {   
-  background: #0a0a0a;   
-  background-image:     
-    linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px),     
-    linear-gradient(180deg, rgba(255,255,255,0.06) 1px, transparent 1px);   
-  background-size: 120px 120px;   
-  padding: 0 0 10px 0;   
-  min-height: 100vh;   
-  margin-top: 10px; 
-} 
+.certificate-section {  
+  background: #0a0a0a;  
+  background-image:   
+    linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px),   
+    linear-gradient(180deg, rgba(255,255,255,0.06) 1px, transparent 1px);  
+  background-size: 120px 120px;  
+  padding: 0 0 10px 0;  
+  min-height: 100vh;  
+  margin-top: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
 
 .certificate-header {   
   display: flex;   
@@ -43,13 +46,14 @@
   margin-right: 65px; 
 } 
 
-.certificate-content {   
-  display: flex;   
-  justify-content: space-between;   
-  align-items: flex-start;   
-  width: 100%;   
-  margin-top: 40px; 
-} 
+.certificate-content {  
+  display: flex;  
+  justify-content: space-between;  
+  align-items: flex-start;  
+  width: 100%;  
+  margin-top: 40px;
+  flex: 1 1 auto;
+}
 
 .certificate-title {   
   font-family: 'Montserrat', 'Arial Black', Arial, sans-serif;   
@@ -67,25 +71,30 @@
   color: #fff;   
   max-width: 400px;   
   text-align: left;   
-  margin-right: 30px;   
+  margin-right: 45px;   
   margin-top: 110px; 
 } 
 
-.certificate-accordion-list {   
-  margin-top: 40px;   
-  width: 100%;   
-  max-width: 700px;   
-  margin-left: auto;   
-  margin-right: 80px;   
-  margin-top: 90px; 
-}  
+.certificate-accordion-list {  
+  margin-top: 40px;  
+  width: 100%;  
+  max-width: 700px;  
+  margin-left: auto;  
+  margin-right: 80px;  
+  margin-top: 90px;
+  flex: 1 1 auto;
+  min-height: unset;
+} 
 
 .certificate-accordion-item {   
   border-bottom: 1px solid #333;   
   padding: 24px 0;   
   transition: all 0.3s ease;
   background: transparent;
-}  
+}
+.certificate-accordion-item:last-child {
+  border-bottom: 1px solid #333;
+}
 
 .certificate-accordion-header {   
   display: flex;   
