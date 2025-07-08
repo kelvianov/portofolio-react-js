@@ -29,8 +29,11 @@
 
 .certificate-section-title {   
   font-weight: 500;   
-  margin-left: 70px; 
-} 
+  margin-left: 70px;
+  font-size: 0.95em;
+  letter-spacing: 0.15em;
+  opacity: 0.8;
+}
 
 .certificate-section-year {   
   color: #b6b6b6;   
