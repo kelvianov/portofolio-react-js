@@ -26,6 +26,9 @@ const ContactSection = () => {
           <span>GITHUB ↗</span>
           <span>LINKEDIN ↗</span>
         </div>
+        <div className="contact-section-backtotop-row">
+          <span className="contact-section-backtotop">BACK TO TOP</span>
+        </div>
         <div className="contact-section-copyright">
           <span>©2024 KELVIANOV DESIGN</span>
         </div>
