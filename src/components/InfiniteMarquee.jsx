@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Project1.css";
+import "../styles/project/Project1.css";
 
 
 const MARQUEE_REPEAT = 12;
