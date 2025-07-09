@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/project/Project3.css";
 
 import Header from "../components/Header";
@@ -6,6 +7,7 @@ import InfiniteMarquee from "../components/InfiniteMarquee";
 import ContactSection from "../components/ContactSection";
 
 const Project3 = () => {
+  const navigate = useNavigate();
   const handleLivePreview = () => {
     window.open("https://portofolio-react-js-kelvianov.vercel.app/", "_blank");
   };
@@ -113,7 +115,15 @@ const Project3 = () => {
       {/* More Works Cards Section */}
       <div className="project-more-works-cards-row" style={{ marginBottom: '120px' }}>
         {/* Card 1 */}
-        <div className="portfolio-card project-more-works-card"
+        <div
+          className="portfolio-card project-more-works-card"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setTimeout(() => {
+              navigate('/project1');
+            }, 200);
+          }}
+          style={{ cursor: 'pointer' }}
           onMouseEnter={() => {
             const cursor = document.querySelector('.portfolio-img-cursor');
             if(cursor) {
@@ -157,7 +167,15 @@ const Project3 = () => {
         </div>
 
         {/* Card 2 */}
-        <div className="portfolio-card project-more-works-card"
+        <div
+          className="portfolio-card project-more-works-card"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setTimeout(() => {
+              navigate('/project2');
+            }, 200);
+          }}
+          style={{ cursor: 'pointer' }}
           onMouseEnter={() => {
             const cursor = document.querySelector('.portfolio-img-cursor');
             if(cursor) cursor.classList.add('active');
