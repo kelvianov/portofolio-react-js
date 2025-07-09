@@ -117,7 +117,15 @@ const Project2 = () => {
       {/* More Works Cards Section */}
       <div className="project-more-works-cards-row" style={{ marginBottom: '120px' }}>
         {/* Card 1 */}
-        <div className="portfolio-card project-more-works-card portofolio-card"
+        <div
+          className="portfolio-card project-more-works-card portofolio-card"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setTimeout(() => {
+              navigate('/project3');
+            }, 200);
+          }}
+          style={{ cursor: 'pointer' }}
           onMouseEnter={() => {
             const cursor = document.querySelector('.portfolio-img-cursor');
             if(cursor) {
