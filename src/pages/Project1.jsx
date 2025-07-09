@@ -12,10 +12,10 @@ const Project = () => {
 
   return (
     <div className="project-page">
-      <Header />
+      <Header currentPage="projects" />
       <div className="project-content">
         <div className="project-meta">
-          <span className="project-date">FEBRUARY 12, 2022</span>
+          <span className="project-date">JULY 12, 2025</span>
         </div>
         <h1 className="project-title">COMPANY PROFILE</h1>
         <p className="project-desc">

@@ -79,7 +79,21 @@ const NavMenu = ({ currentPage = 'home' }) => {
         <div className="menu-content">
           <div className="menu-items">
             {menuItems.map((item, index) => (
-              <div key={index} className="menu-item">
+              <div key={index} className="menu-item"
+                onClick={() => {
+                  if (item.page === 'home') {
+                    window.location.href = '/';
+                  } else if (item.page === 'certificates') {
+                    window.location.href = '/certificates';
+                  } else if (item.page === 'projects') {
+                    window.location.href = '/portfolio';
+                  } else if (item.page === 'about') {
+                    window.location.href = '/about';
+                  } else if (item.page === 'contact') {
+                    window.location.href = '/contact';
+                  }
+                }}
+              >
                 <span className={`menu-label ${currentPage === item.page ? 'gray' : 'white'}`}>
                   {item.name}
                 </span>
