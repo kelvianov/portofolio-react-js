@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/PortfolioSection.css";
@@ -134,7 +133,10 @@ const PortfolioSection = () => {
                 onMouseMove={handleImgMove}
                 onMouseLeave={handleImgLeave}
                 style={{ cursor: 'pointer' }}
-                onClick={() => navigate('/project1')}
+                onClick={() => {
+                  navigate('/project1');
+                  window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+                }}
               />
               <div className="portfolio-card-footer">
                 <div className="portfolio-dots">
