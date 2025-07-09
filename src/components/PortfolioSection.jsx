@@ -1,4 +1,6 @@
+
 import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/PortfolioSection.css";
 
 const portfolioData = [
@@ -26,6 +28,7 @@ const portfolioData = [
 ];
 
 const PortfolioSection = () => {
+  const navigate = useNavigate();
   const titleRef = useRef(null);
   const sectionRef = useRef(null);
   const [titleVisible, setTitleVisible] = useState(false);
@@ -130,6 +133,8 @@ const PortfolioSection = () => {
                 onMouseEnter={handleImgEnter}
                 onMouseMove={handleImgMove}
                 onMouseLeave={handleImgLeave}
+                style={{ cursor: 'pointer' }}
+                onClick={() => navigate('/project')}
               />
               <div className="portfolio-card-footer">
                 <div className="portfolio-dots">
