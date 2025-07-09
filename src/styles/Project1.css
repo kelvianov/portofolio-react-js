@@ -1,3 +1,7 @@
+.portfolio-img-cursor.dark {
+  background: #111 !important;
+  color: #fff !important;
+}
 /* More Works Card Size */
 .project-more-works-card {
   width: 680px;

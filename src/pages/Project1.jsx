@@ -100,7 +100,10 @@ const Project = () => {
         <div className="portfolio-card project-more-works-card"
           onMouseEnter={() => {
             const cursor = document.querySelector('.portfolio-img-cursor');
-            if(cursor) cursor.classList.add('active');
+            if(cursor) {
+              cursor.classList.add('active');
+              cursor.classList.add('dark');
+            }
           }}
           onMouseMove={e => {
             const cursor = document.querySelector('.portfolio-img-cursor');
@@ -111,7 +114,10 @@ const Project = () => {
           }}
           onMouseLeave={() => {
             const cursor = document.querySelector('.portfolio-img-cursor');
-            if(cursor) cursor.classList.remove('active');
+            if(cursor) {
+              cursor.classList.remove('active');
+              cursor.classList.remove('dark');
+            }
           }}
         >
           <img
