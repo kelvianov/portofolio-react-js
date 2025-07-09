@@ -23,6 +23,7 @@
   justify-content: center;
   min-height: 80vh;
   text-align: center;
+  margin-top: -120px;
 }
 
 .project-meta {
@@ -47,7 +48,7 @@
 
 .project-desc {
   color: #8b949e;
-  font-size: 1.3rem;
+  font-size: 1rem;
   max-width: 700px;
   margin: 0 auto 40px auto;
   font-family: 'Montserrat', Arial, sans-serif;

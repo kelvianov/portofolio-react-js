@@ -129,12 +129,12 @@ const PortfolioSection = () => {
               <img
                 src={portfolioData[0].image}
                 alt={portfolioData[0].title}
-                className="portfolio-img"
+                className="portfolio-img" 
                 onMouseEnter={handleImgEnter}
                 onMouseMove={handleImgMove}
                 onMouseLeave={handleImgLeave}
                 style={{ cursor: 'pointer' }}
-                onClick={() => navigate('/project')}
+                onClick={() => navigate('/project1')}
               />
               <div className="portfolio-card-footer">
                 <div className="portfolio-dots">
