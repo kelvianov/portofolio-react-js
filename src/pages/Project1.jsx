@@ -1,12 +1,15 @@
 import React from "react";
 import "../styles/Project1.css";
 
-
 import Header from "../components/Header";
 import InfiniteMarquee from "../components/InfiniteMarquee";
 import ContactSection from "../components/ContactSection";
 
 const Project = () => {
+  const handleLivePreview = () => {
+    window.open("https://company-profile-react-js.vercel.app/", "_blank");
+  };
+
   return (
     <div className="project-page">
       <Header />
@@ -18,7 +21,10 @@ const Project = () => {
         <p className="project-desc">
           Seventy Seven is a bold, minimal garage portfolio showcasing projects with striking visuals. Ideal for designers and creators seeking a sleek, impactful presence.
         </p>
-        <button className="project-live-btn">LIVE PREVIEW</button>
+        {/* Opsi 1: Menggunakan onClick handler (recommended) */}
+        <button className="project-live-btn" onClick={handleLivePreview}>
+          LIVE PREVIEW
+        </button>
       </div>
 
       {/* Gambar project1.0.png di bawah project-content */}
