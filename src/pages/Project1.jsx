@@ -97,7 +97,23 @@ const Project = () => {
       {/* More Works Cards Section */}
       <div className="project-more-works-cards-row" style={{ marginBottom: '120px' }}>
         {/* Card 1 */}
-        <div className="portfolio-card project-more-works-card">
+        <div className="portfolio-card project-more-works-card"
+          onMouseEnter={() => {
+            const cursor = document.querySelector('.portfolio-img-cursor');
+            if(cursor) cursor.classList.add('active');
+          }}
+          onMouseMove={e => {
+            const cursor = document.querySelector('.portfolio-img-cursor');
+            if(cursor) {
+              cursor.style.left = e.clientX + 'px';
+              cursor.style.top = e.clientY + 'px';
+            }
+          }}
+          onMouseLeave={() => {
+            const cursor = document.querySelector('.portfolio-img-cursor');
+            if(cursor) cursor.classList.remove('active');
+          }}
+        >
           <img
             src="/images/project3.0.png"
             alt="Portofolio Project"
@@ -119,7 +135,23 @@ const Project = () => {
         </div>
 
         {/* Card 2 */}
-        <div className="portfolio-card project-more-works-card">
+        <div className="portfolio-card project-more-works-card"
+          onMouseEnter={() => {
+            const cursor = document.querySelector('.portfolio-img-cursor');
+            if(cursor) cursor.classList.add('active');
+          }}
+          onMouseMove={e => {
+            const cursor = document.querySelector('.portfolio-img-cursor');
+            if(cursor) {
+              cursor.style.left = e.clientX + 'px';
+              cursor.style.top = e.clientY + 'px';
+            }
+          }}
+          onMouseLeave={() => {
+            const cursor = document.querySelector('.portfolio-img-cursor');
+            if(cursor) cursor.classList.remove('active');
+          }}
+        >
           <img
             src="/images/project2.0.png"
             alt="KosKu Project"
@@ -141,6 +173,8 @@ const Project = () => {
         </div>
       </div>
 
+      {/* Custom Cursor for More Works Card (same as PortfolioSection) */}
+      <div className="portfolio-img-cursor" style={{left:0,top:0,transform:'translate(-50%,-50%)'}}>VIEW</div>
       {/* Contact Section persis seperti komponen utama */}
       <ContactSection />
     </div>
