@@ -19,7 +19,8 @@ const Project = () => {
         </div>
         <h1 className="project-title">COMPANY PROFILE</h1>
         <p className="project-desc">
-          Seventy Seven is a bold, minimal garage portfolio showcasing projects with striking visuals. Ideal for designers and creators seeking a sleek, impactful presence.
+          I’m a digital designer crafting bold, minimalist experiences that elevate brands.
+          Clean visuals and purposeful design — built to leave a lasting impression.
         </p>
         {/* Opsi 1: Menggunakan onClick handler (recommended) */}
         <button className="project-live-btn" onClick={handleLivePreview}>
@@ -59,7 +60,7 @@ const Project = () => {
       <div className="project-section research-section">
         <div className="research-title">RESEARCH</div>
         <div className="research-desc">
-          Research is the cornerstone of innovation and progress, involving the systematic investigation of questions, problems, or phenomena to uncover new knowledge or insights. It enables us to validate theories, develop solutions, and deepen our understanding of the world.
+          It’s a focused process of exploring questions, identifying problems, and discovering insights that drive real progress. Through thoughtful investigation, we validate ideas, uncover new possibilities, and shape solutions that move brands and experiences forward.
         </div>
       </div>
 
@@ -67,7 +68,9 @@ const Project = () => {
       <div className="project-section design-section">
         <div className="design-title">DESIGN</div>
         <div className="design-desc">
-          Design plays a crucial role in shaping perceptions and creating memorable experiences. A well-crafted design not only communicates ideas effectively but also evokes emotions, captures attention, and builds trust. From striking visuals to thoughtful layouts, every element of design contributes to telling a unique story.
+          Design is how I communicate — with clarity, emotion, and intention.
+          It’s not just about how things look, but how they feel and how they work.
+          I craft every detail to create experiences that connect and resonate.
         </div>
       </div>
 
@@ -84,7 +87,9 @@ const Project = () => {
       <div className="project-section development-section">
         <div className="development-title">DEVELOPMENT</div>
         <div className="development-desc">
-          Seventy Seven is meticulously crafted with cutting-edge web technologies to ensure a seamless user experience. The portfolio is built for speed, responsiveness, and adaptability across devices, making it accessible to all audiences. Every detail, from interactive elements to smooth animations, has been carefully optimized to create an engaging and modern digital showcase.
+          This website is built with modern web technologies to deliver a smooth, fast, and responsive experience across all devices.
+          Every element — from subtle transitions to clean layouts — is carefully optimized to showcase each product with elegance and clarity.
+          The goal is simple: to serve quality and taste, even before the first bite.
         </div>
       </div>
 
