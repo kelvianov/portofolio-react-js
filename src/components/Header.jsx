@@ -6,7 +6,7 @@ const Header = ({ currentPage = "home" }) => {
   return (
     <header className="header">
       <div className="logo">
-        KELVIANOV/2025
+        KELVIANOV.
       </div>
       <NavMenu currentPage={currentPage} />
       <div className="header-right">

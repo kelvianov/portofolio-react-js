@@ -9,24 +9,23 @@ import ContactSection from "../components/ContactSection";
 const Project3 = () => {
   const navigate = useNavigate();
   const handleLivePreview = () => {
-    window.open("https://portofolio-react-js-kelvianov.vercel.app/", "_blank");
+    window.open("https://portofolio-tau-lovat.vercel.app/", "_blank");
   };
 
   const heroAnimRef = useRef(null);
-  const [showAnim, setShowAnim] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    setShowAnim(true);
-    setTimeout(() => {
-      const imgBlock = document.querySelector('.project-image-block');
-      if (imgBlock) imgBlock.classList.add('fade-in');
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
     }, 100);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <div className="project-page">
       <Header currentPage="projects" />
-      <div className={`project-content${showAnim ? ' fade-in' : ''}`} ref={heroAnimRef}>
+      <div className={`project-content ${isLoaded ? 'fade-in' : ''}`} ref={heroAnimRef}>
         <div className="project-meta">
           <span className="project-date">JULY 12, 2025</span>
         </div>
@@ -40,7 +39,7 @@ const Project3 = () => {
       </div>
 
       {/* Gambar project3.0.png di bawah project-content */}
-      <div className="project-image-block">
+      <div className={`project-image-block ${isLoaded ? 'fade-in' : ''}`}> 
         <img
           src="/images/project3.0.png"
           alt="Portofolio Project"
@@ -84,7 +83,7 @@ const Project3 = () => {
       </div>
 
       {/* Gambar project3.1.png di bawah Design Section */}
-      <div className="project-image-block" style={{ marginTop: '170px' }}>
+      <div className={`project-image-block ${isLoaded ? 'fade-in' : ''}`} style={{ marginTop: '170px' }}>
         <img
           src="/images/project3.1.png"
           alt="Design Section Project"
@@ -101,7 +100,7 @@ const Project3 = () => {
       </div>
 
       {/* Gambar project3.2.png di bawah Development Section */}
-      <div className="project-image-block" style={{ marginTop: '120px' }}>
+      <div className={`project-image-block ${isLoaded ? 'fade-in' : ''}`} style={{ marginTop: '120px' }}>
         <img
           src="/images/project3.2.png"
           alt="Development Section Project"

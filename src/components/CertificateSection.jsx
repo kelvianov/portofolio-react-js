@@ -79,9 +79,28 @@ const certificates = [
   },
 ];
 
+
+import { useEffect, useRef } from 'react';
+
 const CertificateSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
-  
+  const titleRef = useRef(null);
+  const [titleVisible, setTitleVisible] = useState(false);
+
+  useEffect(() => {
+    const currentTitle = titleRef.current;
+    const observer = new window.IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setTitleVisible(true);
+        });
+      },
+      { threshold: 0.5, rootMargin: '0px 0px -100px 0px' }
+    );
+    if (currentTitle) observer.observe(currentTitle);
+    return () => { if (currentTitle) observer.unobserve(currentTitle); };
+  }, []);
+
   const renderDots = (count) => {
     const dots = [];
     for (let i = 0; i < 5; i++) {
@@ -103,8 +122,12 @@ const CertificateSection = () => {
         <span className="certificate-section-year">2022 - 2025</span>
       </div>
       <div className="certificate-content">
-        <div className="certificate-title">
-          PRO<br />CERTIFICATES
+        <div 
+          className={`certificate-title${titleVisible ? ' animate' : ''}`}
+          ref={titleRef}
+        >
+          <span className="word">PRO</span><br />
+          <span className="word">CERTIFICATES</span>
         </div>
         <div className="certificate-desc">
           Explore my collection of professional certificates<br />

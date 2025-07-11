@@ -54,15 +54,39 @@
   flex: 1 1 auto;
 }
 
-.certificate-title {   
-  font-family: 'Montserrat', 'Arial Black', Arial, sans-serif;   
-  font-size: 7vw;   
-  font-weight: 900;   
-  color: #fff;   
-  text-transform: uppercase;   
-  line-height: 0.9;   
-  margin-left: 55px; 
-} 
+
+.certificate-title {
+  font-family: 'Montserrat', 'Arial Black', Arial, sans-serif;
+  font-size: 7vw;
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 0.9;
+  margin-left: 55px;
+  display: inline-block;
+  letter-spacing: -0.03em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.certificate-title .word {
+  display: inline-block;
+  margin-right: 24px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.certificate-title.animate .word:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+.certificate-title.animate .word:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
 
 .certificate-desc {   
   font-family: 'Montserrat', Arial, sans-serif;   

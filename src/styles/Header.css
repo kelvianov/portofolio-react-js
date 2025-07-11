@@ -18,10 +18,11 @@
 }
 
 .logo {
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  color: #666;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #fff;
+  font-family: 'Montserrat', Arial, sans-serif;
   opacity: 0;
   animation: slideInFromLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
 }

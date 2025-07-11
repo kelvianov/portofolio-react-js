@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/project/Project2.css";
 
@@ -7,27 +8,26 @@ import InfiniteMarquee from "../components/InfiniteMarquee";
 import ContactSection from "../components/ContactSection";
 
 const Project2 = () => {
+
   const navigate = useNavigate();
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   const handleLivePreview = () => {
     window.open("https://kosku-react.vercel.app/", "_blank");
   };
 
-  const heroAnimRef = useRef(null);
-  const [showAnim, setShowAnim] = useState(false);
-
-  useEffect(() => {
-    setShowAnim(true);
-    // Tambahkan animasi untuk gambar utama
-    setTimeout(() => {
-      const imgBlock = document.querySelector('.project-image-block');
-      if (imgBlock) imgBlock.classList.add('fade-in');
-    }, 100);
-  }, []);
 
   return (
     <div className="project-page">
       <Header currentPage="projects" />
-      <div className={`project-content${showAnim ? ' fade-in' : ''}`} ref={heroAnimRef}>
+      <div className={`project-content ${isLoaded ? 'fade-in' : ''}`}>
         <div className="project-meta">
           <span className="project-date">JULY 12, 2025</span>
         </div>
@@ -42,7 +42,7 @@ const Project2 = () => {
       </div>
 
       {/* Gambar project2.0.png di bawah project-content */}
-      <div className="project-image-block">
+      <div className={`project-image-block ${isLoaded ? 'fade-in' : ''}`}>
         <img
           src="/images/project2.0.png"
           alt="KosKu Project"
@@ -78,6 +78,7 @@ const Project2 = () => {
       </div>
 
       {/* Design Section */}
+
       <div className="project-section design-section">
         <div className="design-title">DESIGN</div>
         <div className="design-desc">
@@ -86,7 +87,7 @@ const Project2 = () => {
       </div>
 
       {/* Gambar project2.1.png di bawah Design Section */}
-      <div className="project-image-block" style={{ marginTop: '170px' }}>
+      <div className={`project-image-block ${isLoaded ? 'fade-in' : ''}`} style={{ marginTop: '170px' }}>
         <img
           src="/images/project2.1.png"
           alt="Design Section Project"
@@ -95,6 +96,7 @@ const Project2 = () => {
       </div>
 
       {/* Development Section */}
+
       <div className="project-section development-section">
         <div className="development-title">DEVELOPMENT</div>
         <div className="development-desc">
@@ -103,7 +105,7 @@ const Project2 = () => {
       </div>
 
       {/* Gambar project2.2.png di bawah Development Section */}
-      <div className="project-image-block" style={{ marginTop: '120px' }}>
+      <div className={`project-image-block ${isLoaded ? 'fade-in' : ''}`} style={{ marginTop: '120px' }}>
         <img
           src="/images/project2.2.png"
           alt="Development Section Project"
