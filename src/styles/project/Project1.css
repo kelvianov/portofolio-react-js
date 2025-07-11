@@ -357,12 +357,11 @@
 .project-page {
   min-height: 320vh;
   width: 100vw;
-  background: #0a0a0a;
+  background: #000000;
   background-image: 
-    linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(255,255,255,0.08) 1px, transparent 1px);
-  background-size: 120px 120px;
-  color: white;
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 200px 100%;
+  color: #fff;
   font-family: 'Montserrat', system-ui, Avenir, Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;

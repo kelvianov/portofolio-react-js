@@ -11,6 +11,10 @@
   opacity: 0;
   animation: slideInFromTop 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
   margin-bottom: 60px;
+  background: #000000;
+  background-image: 
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 200px 100%;
 }
 
 .logo {

@@ -44,13 +44,10 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #0a0a0a;
+  background: #000000;
   background-image: 
-    /* Vertical grid lines */
-    linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px),
-    /* Horizontal grid lines */
-    linear-gradient(180deg, rgba(255,255,255,0.08) 1px, transparent 1px);
-  background-size: 120px 120px;
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 200px 100%;
   z-index: 1000;
   opacity: 0;
   visibility: hidden;
