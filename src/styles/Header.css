@@ -1,3 +1,13 @@
+.contact-btn:focus,
+.contact-btn:focus-visible,
+.contact-btn:active,
+.contact-btn:hover:focus {
+  border: 2px solid white !important;
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+}
 /* Header.css */
 .header {
   display: flex;
@@ -45,10 +55,10 @@
 }
 
 .contact-btn:hover {
-  background: white;
+  background: hsl(0, 0%, 99%);
   color: black;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .header-right {
