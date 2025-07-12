@@ -30,7 +30,7 @@ const Project = () => {
         <div className="project-meta">
           <span className="project-date">JULY 12, 2025</span>
         </div>
-        <h1 className="project-title">COMPANY PROFILE</h1>
+        <h1 className="project-title">COMPANY WEB</h1>
         <p className="project-desc">
           I'm a digital designer crafting bold, minimalist experiences that elevate brands.
           Clean visuals and purposeful design — built to leave a lasting impression.
