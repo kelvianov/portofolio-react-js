@@ -204,8 +204,8 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
         >
           <CuboidCollider args={[0.8, 1.125, 0.01]} />
           <group
-            scale={3.5}
-            position={[0, -2.7, -0.05]}
+            scale={4.3}
+            position={[0, -4, -0.05]}
             className="lanyard-card-draggable"
             onPointerOver={() => hover(true)}
             onPointerOut={() => hover(false)}

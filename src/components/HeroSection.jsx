@@ -14,7 +14,7 @@ const HeroSection = () => {
           I’m Specialized in<br />
           Creating Website Design.
         </div>
-        <h1 className="hero-title">MPIW</h1>
+        <h1 className="hero-title">KELVIANOV</h1>
       </div>
     </section>
   );
