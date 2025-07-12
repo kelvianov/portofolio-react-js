@@ -1,13 +1,22 @@
-.contact-btn:focus,
-.contact-btn:focus-visible,
-.contact-btn:active,
-.contact-btn:hover:focus {
-  border: 2px solid white !important;
+/* Global reset for all outlines */
+* {
+  outline: none !important;
+}
+
+*:focus {
   outline: none !important;
   box-shadow: none !important;
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
 }
+
+button {
+  outline: none !important;
+}
+
+button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 /* Header.css */
 .header {
   display: flex;
@@ -52,13 +61,35 @@
   position: relative;
   animation: slideInFromRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
   margin-top: 10px;
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .contact-btn:hover {
-  background: hsl(0, 0%, 99%);
+  background: rgb(255, 255, 255);
   color: black;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  outline: none !important;
+  border: 2px solid white !important;
+}
+
+.contact-btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: 2px solid white !important;
+}
+
+.contact-btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.contact-btn:focus-visible {
+  outline: none !important;
 }
 
 .header-right {
