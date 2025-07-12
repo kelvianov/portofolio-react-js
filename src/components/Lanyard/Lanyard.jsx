@@ -35,19 +35,59 @@ export default function Lanyard({
   fov = 20,
   transparent = true,
 }) {
+  const [isReady, setIsReady] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // Delay physics simulation untuk menghindari bouncing awal
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsReady(true);
+    }, 100); // Delay 100ms sebelum physics dimulai
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Loading state untuk memastikan semua asset loaded
+  useEffect(() => {
+    const loadTimer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 200);
+
+    return () => clearTimeout(loadTimer);
+  }, []);
+
+  if (!isLoaded) {
+    return (
+      <div className="lanyard-wrapper">
+        <div style={{ 
+          position: 'absolute', 
+          top: '20px', 
+          right: '20px', 
+          opacity: 0 
+        }}>
+          Loading...
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="lanyard-wrapper">
       <Canvas
         camera={{ position: position, fov: fov }}
-        gl={{ alpha: transparent }}
-        onCreated={({ gl }) =>
-          gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)
-        }
+        gl={{ alpha: transparent, antialias: true }}
+        onCreated={({ gl }) => {
+          gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1);
+          gl.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        }}
+        dpr={[1, 2]}
       >
         <ambientLight intensity={Math.PI} />
-        <Physics gravity={gravity} timeStep={1 / 60}>
-          <Band />
-        </Physics>
+        {isReady && (
+          <Physics gravity={gravity} timeStep={1 / 60}>
+            <Band />
+          </Physics>
+        )}
         <Environment blur={0.75}>
           <Lightformer
             intensity={2}
@@ -82,6 +122,7 @@ export default function Lanyard({
     </div>
   );
 }
+
 function Band({ maxSpeed = 50, minSpeed = 0 }) {
   const band = useRef(),
     fixed = useRef(),
@@ -93,13 +134,19 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
     ang = new THREE.Vector3(),
     rot = new THREE.Vector3(),
     dir = new THREE.Vector3();
+  
+  const [physicsInitialized, setPhysicsInitialized] = useState(false);
+  
+  // Tingkatkan damping dan tambahkan stabilitas
   const segmentProps = {
     type: "dynamic",
     canSleep: true,
     colliders: false,
-    angularDamping: 4,
-    linearDamping: 4,
+    angularDamping: 8,
+    linearDamping: 8,
+    gravityScale: 1,
   };
+  
   const { nodes, materials } = useGLTF(cardGLB);
   const texture = useTexture(lanyard);
   const [curve] = useState(
@@ -125,6 +172,23 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
     [0, 1.5, 0],
   ]);
 
+  // Inisialisasi physics setelah semua ref siap
+  useEffect(() => {
+    if (fixed.current && j1.current && j2.current && j3.current && card.current) {
+      // Set posisi awal yang natural
+      setTimeout(() => {
+        // Stabilkan posisi dengan menset velocity ke 0
+        [j1, j2, j3, card].forEach(ref => {
+          if (ref.current) {
+            ref.current.setLinvel({ x: 0, y: 0, z: 0 });
+            ref.current.setAngvel({ x: 0, y: 0, z: 0 });
+          }
+        });
+        setPhysicsInitialized(true);
+      }, 50);
+    }
+  }, []);
+
   useEffect(() => {
     if (hovered) {
       document.body.style.cursor = dragged ? "grabbing" : "grab";
@@ -138,11 +202,12 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
     };
 
     window.addEventListener("resize", handleResize);
-
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useFrame((state, delta) => {
+    if (!physicsInitialized) return;
+
     if (dragged) {
       vec.set(state.pointer.x, state.pointer.y, 0.5).unproject(state.camera);
       dir.copy(vec).sub(state.camera.position).normalize();
@@ -154,6 +219,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
         z: vec.z - dragged.z,
       });
     }
+    
     if (fixed.current) {
       [j1, j2].forEach((ref) => {
         if (!ref.current.lerped)
@@ -169,11 +235,13 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
           delta * (minSpeed + clampedDistance * (maxSpeed - minSpeed)),
         );
       });
+      
       curve.points[0].copy(j3.current.translation());
       curve.points[1].copy(j2.current.lerped);
       curve.points[2].copy(j1.current.lerped);
       curve.points[3].copy(fixed.current.translation());
       band.current.geometry.setPoints(curve.getPoints(32));
+      
       ang.copy(card.current.angvel());
       rot.copy(card.current.rotation());
       card.current.setAngvel({ x: ang.x, y: ang.y - rot.y * 0.25, z: ang.z });
@@ -187,17 +255,18 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
     <>
       <group position={[8, 4, 0]}>
         <RigidBody ref={fixed} {...segmentProps} type="fixed" position={[0, 3, 0]} />
-        <RigidBody position={[0, -6, 0]} ref={j1} {...segmentProps}>
+        {/* Posisi natural equilibrium untuk menghindari bouncing */}
+        <RigidBody position={[0.3, -2.5, 0]} ref={j1} {...segmentProps}>
           <BallCollider args={[0.1]} />
         </RigidBody>
-        <RigidBody position={[0, -12, 0]} ref={j2} {...segmentProps}>
+        <RigidBody position={[0.6, -8.5, 0]} ref={j2} {...segmentProps}>
           <BallCollider args={[0.1]} />
         </RigidBody>
-        <RigidBody position={[0, -18, 0]} ref={j3} {...segmentProps}>
+        <RigidBody position={[0.4, -14.5, 0]} ref={j3} {...segmentProps}>
           <BallCollider args={[0.1]} />
         </RigidBody>
         <RigidBody
-          position={[0, -24, 0]}
+          position={[0, -20.5, 0]}
           ref={card}
           {...segmentProps}
           type={dragged ? "kinematicPosition" : "dynamic"}

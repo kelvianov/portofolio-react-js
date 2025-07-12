@@ -1,14 +1,9 @@
-
-import Lanyard from "../components/Lanyard/Lanyard";
-
 import React from 'react';
 import '../styles/HeroSection.css';
-
 
 const HeroSection = () => {
   return (
     <section className="hero-section" style={{ minHeight: 500, position: 'relative' }}>
-      <Lanyard />
       <div className="hero-content hero-content-left">
         <div className="hero-subtitle">
           I’m Specialized in<br />

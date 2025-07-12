@@ -28,7 +28,7 @@
 }
 
 .contact-btn {
-  background: transparent;
+  background: #000;
   border: 2px solid white;
   color: white;
   padding: 10px 24px;
@@ -38,6 +38,8 @@
   letter-spacing: 1px;
   cursor: pointer;
   transition: all 0.3s ease;
+  z-index: 2002;
+  position: relative;
   animation: slideInFromRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
   margin-top: 10px;
 }
@@ -47,6 +49,11 @@
   color: black;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.header-right {
+  position: relative;
+  z-index: 2001;
 }
 
 /* Responsive */

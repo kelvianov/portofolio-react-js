@@ -12,8 +12,42 @@
   justify-content: flex-end;
   align-items: flex-start;
   z-index: 1000;
+  pointer-events: none; /* Biarkan click pass-through ke hero content */
+  will-change: transform; /* Optimize untuk animasi */
 }
 
 .lanyard-card-draggable {
   pointer-events: auto;
+  cursor: grab;
+}
+
+.lanyard-card-draggable:active {
+  cursor: grabbing;
+}
+
+/* Smooth rendering untuk canvas */
+.lanyard-wrapper canvas {
+  image-rendering: optimizeQuality;
+  image-rendering: -webkit-optimize-contrast;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .lanyard-wrapper {
+    /* Bisa adjust positioning untuk mobile jika diperlukan */
+  }
+}
+
+/* Preload optimization */
+.lanyard-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  pointer-events: none;
 }
